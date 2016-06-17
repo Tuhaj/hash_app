@@ -1,9 +1,11 @@
 {{outlet}}
-<h1>Login to watch the dashboard</h1>
-
-<div class="field">
-  <label>User Email</label>
-  {{input value=userEmail}}
-</div>
-
-<div class="btn btn-primary">Login</div>
+<section class="login">
+  <h2>Login to watch the dashboard</h2>
+  <form class="form-inline" {{action "login" on="submit"}}>
+    <div class="form-group">
+      <label>User Email</label>
+      {{input value=userEmail required='true' type='email' placeholder='Enter your email'}}
+    </div>
+    <input class="btn btn-primary" type='submit' value='Login'/>
+  </form>
+</section>

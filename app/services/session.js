@@ -5,9 +5,20 @@ export default Ember.Service.extend({
 
   login(user) {
     this.set('currentUser', user);
+    Cookies.set('user', user);
   },
 
   logout() {
     this.set('currentUser', null);
-  }
+    Cookies.remove('user');
+  },
+
+  initializeFromCookie: function() {
+    let user = Cookies.get('user');
+    if(!!user) {
+      this.set('currentUser', user);
+    }
+  }.on('init')
+
+
 });

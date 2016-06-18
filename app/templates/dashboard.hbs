@@ -9,7 +9,7 @@
 <form {{action 'getInput' on='submit'}}>
   <fieldset class="form-group">
     <label for="exampleTextarea">Write your input here</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3" maxlength="255"></textarea>
+    {{textarea class="form-control" type="text" value=textInput rows="3" maxlength="255"}}
   </fieldset>
    <button type="submit" class="btn btn-primary">Submit</button>
 </form>

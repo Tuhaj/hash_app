@@ -10,6 +10,11 @@ export default Ember.Controller.extend({
       console.log("generates hash");
       console.log("stores hash");
       console.log("cleans fields");
+    },
+
+    logout() {
+      this.get('session').logout();
+      return true;
     }
   }
 });

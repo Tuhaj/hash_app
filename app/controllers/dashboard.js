@@ -9,18 +9,20 @@ export default Ember.Controller.extend({
     return id;
   }),
 
+
   allHashed: function() {
-    return this.store.peekAll('hash');
+    return this.store.findAll('hash');
   }.property('hashes.@each'),
 
   actions: {
     addInput() {
-      var store = this.store;
-      store.createRecord('hash', {
+      let store = this.store;
+      let newHash = store.createRecord('hash', {
         hash: this.get('hash'),
         input: this.get('textInput'),
         userEmail: this.get('user')
       });
+      newHash.save();
       this.set('textInput', '');
     },
 

@@ -1,2 +1,15 @@
 {{outlet}}
-<h1>You {{user}} are logged in to the dashboard!</h1>
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Logout</a></li>
+    <li class="disabled"><a>{{user}}</a></li>
+  </ul>
+</nav>
+
+<form {{action 'getInput' on='submit'}}>
+  <fieldset class="form-group">
+    <label for="exampleTextarea">Write your input here</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+  </fieldset>
+   <button type="submit" class="btn btn-primary">Submit</button>
+</form>

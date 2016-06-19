@@ -9,10 +9,18 @@ export default Ember.Controller.extend({
     return id;
   }),
 
-
   allHashed: function() {
     return this.store.findAll('hash');
   }.property('hashes.@each'),
+
+  onSuccess: function() {
+    this.set('textInput', '');
+    this.get('flashMessages').success('Hash successfully added');
+  },
+
+  onFail: function() {
+    console.log("Hash not saved");
+  },
 
   actions: {
     addInput() {
@@ -22,8 +30,7 @@ export default Ember.Controller.extend({
         input: this.get('textInput'),
         userEmail: this.get('user')
       });
-      newHash.save();
-      this.set('textInput', '');
+      newHash.save().then(this.onSuccess.bind(this), this.onFail.bind(this));
     },
 
     logout() {

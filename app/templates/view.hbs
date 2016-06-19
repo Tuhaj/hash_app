@@ -1,22 +1,3 @@
 {{outlet}}
 {{partial 'navbar'}}
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Input</th>
-      <th>User Email</th>
-      <th>Creation Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each allHashed as |hash|}}
-      <tr>
-        <th scope="row">{{hash.hash}}</th>
-        <td>{{hash.input}}</td>
-        <td>{{hash.userEmail}}</td>
-        <td>{{hash.createdAt}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+{{component 'hash-table' allHashed=allHashed}}

@@ -1,14 +1,5 @@
 {{outlet}}
 {{partial 'navbar'}}
-
-<form {{action 'addInput' on='submit'}}>
-  <fieldset class="form-group">
-    <label for="exampleTextarea">Write your input here</label>
-    {{textarea class="form-control" type="text" value=textInput rows="3" maxlength="255"}}
-  </fieldset>
-   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
 <table class="table">
   <thead>
     <tr>

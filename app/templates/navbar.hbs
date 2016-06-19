@@ -1,0 +1,8 @@
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav navbar-right">
+    <li>{{#link-to "dashboard"}}Home{{/link-to}}</li>
+    <li>{{#link-to "view"}}View{{/link-to}}</li>
+    <li><a href="#" {{action 'logout'}}>Logout</a></li>
+    <li class="disabled"><a>{{user}}</a></li>
+  </ul>
+</nav>
